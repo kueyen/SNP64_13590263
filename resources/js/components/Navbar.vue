@@ -1,24 +1,31 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-      <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
-        {{ appName }}
-      </router-link>
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="/images/logo.png" width="90">
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
         <span class="navbar-toggler-icon" />
       </button>
 
       <div id="navbar" class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-          <locale-dropdown />
+        <ul class="nav m-auto">
+          <!-- <locale-dropdown /> -->
+          <li class="nav-item">
+            <a href="">Product</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a href="">Product</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a href="">Product</a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li> -->
         </ul>
-
-        <ul class="navbar-nav ms-auto">
-          <!-- Authenticated -->
+         <ul class="navbar-nav ms-auto">
           <li v-if="user" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-dark"
                href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -39,7 +46,6 @@
               </a>
             </div>
           </li>
-          <!-- Guest -->
           <template v-else>
             <li class="nav-item">
               <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
@@ -52,7 +58,7 @@
               </router-link>
             </li>
           </template>
-        </ul>
+        </ul> 
       </div>
     </div>
   </nav>
