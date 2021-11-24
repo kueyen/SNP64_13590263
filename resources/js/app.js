@@ -7,6 +7,9 @@ import App from '~/components/App'
 import '~/plugins'
 import '~/components'
 
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

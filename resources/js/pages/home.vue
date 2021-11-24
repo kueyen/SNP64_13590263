@@ -1,247 +1,83 @@
 <template>
-  <div class="container-fluid">
-    <div
-      id="carouselExampleDark"
-      class="carousel carousel-dark slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleDark"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        />
-        <button
-          type="button"
-          data-bs-target="#carouselExampleDark"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        />
-        <button
-          type="button"
-          data-bs-target="#carouselExampleDark"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        />
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="images/hd1080.png" class="d-block w-100">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="images/hd1080.png" class="d-block w-100">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/hd1080.png" class="d-block w-100">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleDark"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true" />
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleDark"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true" />
-        <span class="visually-hidden">Next</span>
-      </button>
+  <div>
+    <div class="container">
+      <carousel :per-page="1">
+        <slide>
+          <img
+            class="d-block w-100"
+            src="/images/hd1080.png"
+            alt="First slide"
+          />
+        </slide>
+        <slide>
+          <img
+            class="d-block w-100"
+            src="/images/hd1080.png"
+            alt="First slide"
+          />
+        </slide>
+      </carousel>
     </div>
-    <h1>สินค้าแนะนำ</h1>
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container mt-4">
+      <h3>สินค้าแนะนำ</h3>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in recommends" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+        </slide>
+      </carousel>
+      <hr />
     </div>
 
-    <h1>ต้นไม้มงคลขายดี</h1>
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
+    <div class="container mt-4">
+      <div class="clearfix">
+        <div class="float-start"><h3>ต้นไม้ด่าง</h3></div>
+        <div class="float-end">
+          <a>ดูทั้งหมด</a>
         </div>
       </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title
-</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in spotted" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title
-</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title
-</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h1>ต้นไม้ประจำวันเกิด</h1>
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top" >
-          <div class="card-body">
-            <h5 class="card-title">Card title
-</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Card title
-</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top" >
-          <div class="card-body">
-            <h5 class="card-title">Card title
-            </h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="images/hd1080.png" class="card-img-top" >
-          <div class="card-body">
-            <h5 class="card-title">Card title
-            </h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+        </slide>
+      </carousel>
     </div>
   </div>
 </template>
@@ -250,6 +86,32 @@
 // import axios from 'axios'
 export default {
   middleware: "auth",
+  data: () => ({
+    recommends: [
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst",
+        price: "180"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
+      }
+    ],
+    spotted: [
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted1",
+        price: "70"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted2",
+        price: "40"
+      }
+    ]
+  }),
 
   // async asyncData () {
   //   const { data: projects } = await axios.get('/api/projects')
