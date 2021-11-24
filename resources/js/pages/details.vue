@@ -7,7 +7,7 @@
             <img class="card-img-top" src="/images/hd1080.png" />
           </div>
           <carousel :per-page="3" class="mt-4">
-            <slide v-for="(item, i) in imageitem" :key="i">
+            <slide v-for="(item, i) in recommends" :key="i">
               <div class="pe-3">
                 <img
                   class="card-img-top"
@@ -22,7 +22,7 @@
           <h3>{{ "มอนเตอร่าด่าง" }}</h3>
           <h6 style="color: lightgrey;">ราคาสินค้า</h6>
           <hr />
-          <h2>฿ {{ "19000" }}</h2>
+          <h2>฿ {{ "19,000" }}</h2>
           <div class="container" style="background-color:lightgrey;">
             <h6>ข้อมูลจำเพาะของสินค้า</h6>
           </div>
@@ -40,7 +40,11 @@
             </div>
           </div>
           <div class="container">
-            <button type="button" class="btn btn-outline-success btn-lg">
+            <button
+              type="button"
+              class="btn btn-outline-success btn-lg"
+              onclick="Swal.fire();"
+            >
               <i class="fas fa-shopping-cart" style="color: green;"></i>
               เพิ่มไปยังรถเข็น
             </button>
@@ -69,6 +73,33 @@
         </h5>
       </div>
     </div>
+    <div class="container mt-5">
+      <h3>สินค้าที่คล้ายกัน</h3>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in recommends" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+    </div>
   </div>
 </template>
 
@@ -76,21 +107,36 @@
 export default {
   middleware: "auth",
   data: () => ({
-    imageitem: [
+    recommends: [
       {
-        image_url: "/images/hd1080.png"
+        image_url: "/images/hd1080.png",
+        title: "TEst",
+        price: "180"
       },
       {
-        image_url: "/images/hd1080.png"
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
       },
       {
-        image_url: "/images/hd1080.png"
+        image_url: "/images/hd1080.png",
+        title: "TEst",
+        price: "180"
       },
       {
-        image_url: "/images/hd1080.png"
+        image_url: "/images/hd1080.png",
+        title: "TEst",
+        price: "180"
       },
       {
-        image_url: "/images/hd1080.png"
+        image_url: "/images/hd1080.png",
+        title: "TEst",
+        price: "180"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst",
+        price: "180"
       }
     ]
   }),

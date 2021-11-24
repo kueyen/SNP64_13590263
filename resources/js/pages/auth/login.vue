@@ -1,20 +1,19 @@
 <template>
-  <div class="row">
+  <div class="row col-6 m-auto">
     <div class="col-lg-7 m-auto">
-      <card :title="$t('login')">
+      <card class="mt-5 my-card" title="เข้าสู่ระบบ">
         <form @submit.prevent="login" @keydown="form.onKeydown($event)">
           <!-- Email -->
           <div class="mb-3 row">
-            <label class="col-md-3 col-form-label text-md-end">{{
-              $t("email")
-            }}</label>
-            <div class="col-md-7">
+            <label class="col-md-12 col-form-label">{{ $t("email") }}</label>
+            <div class="col-md-12">
               <input
                 v-model="form.email"
                 :class="{ 'is-invalid': form.errors.has('email') }"
                 class="form-control"
                 type="email"
                 name="email"
+                placeholder="Enter Your Email"
               />
               <has-error :form="form" field="email" />
             </div>
@@ -22,17 +21,17 @@
 
           <!-- Password -->
           <div class="mb-3 row">
-            <label class="col-md-3 col-form-label text-md-end">{{
-              $t("password")
-            }}</label>
-            <div class="col-md-7">
+            <label class="col-md-12 col-form-label">{{ $t("password") }}</label>
+            <div class="col-md-12">
               <input
                 v-model="form.password"
                 :class="{ 'is-invalid': form.errors.has('password') }"
                 class="form-control"
                 type="password"
                 name="password"
+                placeholder="Enter Your Password"
               />
+
               <has-error :form="form" field="password" />
             </div>
           </div>
@@ -40,7 +39,7 @@
           <!-- Remember Me -->
           <div class="mb-3 row">
             <div class="col-md-3" />
-            <div class="col-md-7 d-flex">
+            <div class="col-md-12 d-flex">
               <checkbox v-model="remember" name="remember">
                 {{ $t("remember_me") }}
               </checkbox>
@@ -55,9 +54,9 @@
           </div>
 
           <div class="mb-3 row">
-            <div class="col-md-7 offset-md-3 d-flex">
+            <div class="col-md-12 d-flex">
               <!-- Submit Button -->
-              <v-button :loading="form.busy">
+              <v-button class="w-100 cl-green" :loading="form.busy">
                 {{ $t("login") }}
               </v-button>
 
@@ -126,3 +125,15 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.my-card {
+  .card-header {
+    text-align: center;
+  }
+}
+.cl-green {
+  .btn .btn-primary {
+    background: #56ab91;
+  }
+}
+</style>

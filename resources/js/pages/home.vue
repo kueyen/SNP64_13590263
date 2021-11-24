@@ -79,6 +79,134 @@
         </slide>
       </carousel>
     </div>
+    <div class="container mt-4">
+      <div class="clearfix">
+        <div class="float-start"><h3>ต้นไม้ฟอกอากาศ</h3></div>
+        <div class="float-end">
+          <a>ดูทั้งหมด</a>
+        </div>
+      </div>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in spotted" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div class="container mt-4">
+      <div class="clearfix">
+        <div class="float-start"><h3>ต้นไม้ประดับ</h3></div>
+        <div class="float-end">
+          <a>ดูทั้งหมด</a>
+        </div>
+      </div>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in spotted" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div class="container mt-4">
+      <div class="clearfix">
+        <div class="float-start"><h3>ต้นไม้มงคล</h3></div>
+        <div class="float-end">
+          <a>ดูทั้งหมด</a>
+        </div>
+      </div>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in spotted" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div class="container mt-4">
+      <div class="clearfix">
+        <div class="float-start"><h3>ปุ๋ย ดิน และอุปกรณ์ดูแลต้นไม้</h3></div>
+        <div class="float-end">
+          <a>ดูทั้งหมด</a>
+        </div>
+      </div>
+      <carousel :per-page="4" class="mt-4">
+        <slide v-for="(item, i) in spotted" :key="i">
+          <div class="pe-3">
+            <div class="card w-100">
+              <img
+                class="card-img-top"
+                :src="item.image_url"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
+                <div class="clearfix">
+                  <div class="float-start">{{ item.price }} ฿</div>
+                  <div class="float-end">
+                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+    </div>
   </div>
 </template>
 
@@ -97,6 +225,31 @@ export default {
         image_url: "/images/hd1080.png",
         title: "TEst2",
         price: "150"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "TEst2",
+        price: "150"
       }
     ],
     spotted: [
@@ -104,6 +257,31 @@ export default {
         image_url: "/images/hd1080.png",
         title: "spotted1",
         price: "70"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted2",
+        price: "40"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted2",
+        price: "40"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted2",
+        price: "40"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted2",
+        price: "40"
+      },
+      {
+        image_url: "/images/hd1080.png",
+        title: "spotted2",
+        price: "40"
       },
       {
         image_url: "/images/hd1080.png",

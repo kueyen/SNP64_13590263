@@ -12,6 +12,7 @@ Vue.use(VueCarousel);
 
 Vue.config.productionTip = false
 
+
 /* eslint-disable no-new */
 new Vue({
   i18n,
