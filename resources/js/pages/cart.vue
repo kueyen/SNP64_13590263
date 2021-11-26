@@ -74,6 +74,7 @@
         <div class="clearfix mt-3">
           <div class="float-end">
             <button
+              @click="showAlert"
               type="button"
               class="py-3 px-5 btn btn-success btn-lg"
               onclick="Swal.fire();"
@@ -130,16 +131,19 @@ export default {
       }
     ]
   }),
-  // async asyncData () {
-  //   const { data: projects } = await axios.get('/api/projects')
-
-  //   return {
-  //     projects
-  //   }
-  // },
+  methods: {
+    showAlert() {
+      this.$swal({
+        icon: "success",
+        title: "สำเร็จ",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  },
 
   metaInfo() {
-    return { title: this.$t("cart") };
+    return { title: "cart" };
   }
 };
 </script>

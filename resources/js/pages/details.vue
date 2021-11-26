@@ -41,9 +41,9 @@
           </div>
           <div class="container">
             <button
+              @click="showAlert"
               type="button"
               class="btn btn-outline-success btn-lg"
-              onclick="Swal.fire();"
             >
               <i class="fas fa-shopping-cart" style="color: green;"></i>
               เพิ่มไปยังรถเข็น
@@ -140,6 +140,17 @@ export default {
       }
     ]
   }),
+  methods: {
+    showAlert() {
+      this.$swal({
+        icon: "success",
+        title: "สำเร็จ",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  },
+
   metaInfo() {
     return { title: "details" };
   }
