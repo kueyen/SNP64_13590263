@@ -63,7 +63,7 @@
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand">
+        <a class="navbar-brand" href="../home">
           <img src="/images/logo.png" width="150" />
         </a>
 
@@ -102,7 +102,7 @@
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
+                <li><a class="dropdown-item" href="../home">ทั้งหมด</a></li>
                 <li><a class="dropdown-item" href="#">ต้นไม้ด่าง</a></li>
                 <li><a class="dropdown-item" href="#">ต้นไม้ฟอกอากาศ</a></li>
                 <li>
@@ -124,7 +124,8 @@
             <li class="nav-item">
               <a class="nav-link" href="#">เทียบขนาดต้นไม้</a>
             </li>
-            <div
+            <a
+              href="../cart"
               class="py-2 px-3"
               style="border-radius: 25px;background: #82C3AB;"
             >
@@ -134,7 +135,7 @@
                 style="border-radius: 25px; background: white;"
                 >0</span
               >
-            </div>
+            </a>
           </ul>
         </div>
       </div>

@@ -13,6 +13,8 @@ export default [
 
   { path: '/home', name: 'home', component: page('home.vue') },
   { path: '/details', name: 'details', component: page('details.vue') },
+  { path: '/cart', name: 'cart', component: page('cart.vue') },
+  { path: '/admin', name: 'admin', component: page('admin.vue') },
   {
     path: '/settings',
     component: page('settings/index.vue'),

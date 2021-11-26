@@ -36,7 +36,9 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                    <a href="../details" class="btn btn-warning text-white"
+                      >ซื้อเลย</a
+                    >
                   </div>
                 </div>
               </div>
@@ -70,7 +72,9 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                    <a href="../details" class="btn btn-warning text-white"
+                      >ซื้อเลย</a
+                    >
                   </div>
                 </div>
               </div>
@@ -102,7 +106,9 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                    <a href="../details" class="btn btn-warning text-white"
+                      >ซื้อเลย</a
+                    >
                   </div>
                 </div>
               </div>
@@ -134,7 +140,9 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                    <a href="../details" class="btn btn-warning text-white"
+                      >ซื้อเลย</a
+                    >
                   </div>
                 </div>
               </div>
@@ -166,7 +174,9 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                    <a href="../details" class="btn btn-warning text-white"
+                      >ซื้อเลย</a
+                    >
                   </div>
                 </div>
               </div>
@@ -198,7 +208,9 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
+                    <a href="../details" class="btn btn-warning text-white"
+                      >ซื้อเลย</a
+                    >
                   </div>
                 </div>
               </div>

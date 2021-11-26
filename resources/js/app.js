@@ -7,6 +7,7 @@ import App from '~/components/App'
 import '~/plugins'
 import '~/components'
 
+
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
 
