@@ -1,9 +1,23 @@
 <template>
-  sadsada
+  <div></div>
 </template>
 
 <script>
-export default {};
-</script>
+// import axios from 'axios'
+export default {
+  middleware: "auth",
+  data: () => ({}),
 
-<style></style>
+  // async asyncData () {
+  //   const { data: projects } = await axios.get('/api/projects')
+
+  //   return {
+  //     projects
+  //   }
+  // },
+
+  metaInfo() {
+    return { title: this.$t("admin") };
+  },
+};
+</script>

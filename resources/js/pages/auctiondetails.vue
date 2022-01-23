@@ -20,9 +20,9 @@
         </div>
         <div class="col-6 mt-3">
           <h3>{{ "มอนเตอร่าด่าง" }}</h3>
-          <h6 style="color: lightgrey">ราคาสินค้า</h6>
+          <h6 style="color: lightgrey">ราคาสินค้าล่าสุด</h6>
           <hr />
-          <h2>฿ {{ "19,000" }}</h2>
+          <h2>฿ {{ "1,000" }}</h2>
           <div class="container" style="background-color: lightgrey">
             <h6>ข้อมูลจำเพาะของสินค้า</h6>
           </div>
@@ -39,18 +39,39 @@
               </p>
             </div>
           </div>
+
+          <div class="container mb-3">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="กรอกจำนวนเงินที่ต้องการ"
+              />
+              <div class="input-group-append">
+                <button
+                  @click="showAlert"
+                  type="button"
+                  class="btn btn-outline-success btn-lg"
+                >
+                  <i class="fas fa-shopping-cart" style="color: green"></i>
+                  ประมูล
+                </button>
+              </div>
+            </div>
+          </div>
+          <h3>ผู้ประมูลล่าสุด</h3>
           <div class="container">
-            <button
-              @click="showAlert"
-              type="button"
-              class="btn btn-outline-success btn-lg"
-            >
-              <i class="fas fa-shopping-cart" style="color: green"></i>
-              เพิ่มไปยังรถเข็น
-            </button>
-            <button type="button" class="btn btn-success btn-lg">
-              ซื้อสินค้า
-            </button>
+            <div class="row">
+              <div class="col">
+                <p>flukeerrar</p>
+              </div>
+              <div class="col">
+                <p>1,000 ฿</p>
+              </div>
+              <div class="col">
+                <p>8 มกราคม 2565</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -72,33 +93,6 @@
           }}
         </h5>
       </div>
-    </div>
-    <div class="container mt-5">
-      <h3>สินค้าที่คล้ายกัน</h3>
-      <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in recommends" :key="i">
-          <div class="pe-3">
-            <div class="card w-100">
-              <img
-                class="card-img-top"
-                :src="item.image_url"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  {{ item.title }}
-                </h5>
-                <div class="clearfix">
-                  <div class="float-start">{{ item.price }} ฿</div>
-                  <div class="float-end">
-                    <a href="#" class="btn btn-warning text-white">ซื้อเลย</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </slide>
-      </carousel>
     </div>
   </div>
 </template>
@@ -152,7 +146,7 @@ export default {
   },
 
   metaInfo() {
-    return { title: "details" };
+    return { title: "auctiondetails" };
   },
 };
 </script>

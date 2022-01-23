@@ -1,29 +1,83 @@
-function page (path) {
-  return () => import(/* webpackChunkName: '' */ `~/pages/${path}`).then(m => m.default || m)
+function page(path) {
+  return () =>
+    import(/* webpackChunkName: '' */ `~/pages/${path}`).then(
+      (m) => m.default || m
+    );
 }
 
 export default [
-
-  { path: '/', name: 'login', component: page('auth/login.vue') },
-  { path: '/register', name: 'register', component: page('auth/register.vue') },
-  { path: '/password/reset', name: 'password.request', component: page('auth/password/email.vue') },
-  { path: '/password/reset/:token', name: 'password.reset', component: page('auth/password/reset.vue') },
-  { path: '/email/verify/:id', name: 'verification.verify', component: page('auth/verification/verify.vue') },
-  { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
-
-  { path: '/home', name: 'home', component: page('home.vue') },
-  { path: '/details', name: 'details', component: page('details.vue') },
-  { path: '/cart', name: 'cart', component: page('cart.vue') },
-  { path: '/admin', name: 'admin', component: page('admin.vue') },
+  { path: "/", name: "login", component: page("auth/login.vue") },
+  { path: "/register", name: "register", component: page("auth/register.vue") },
   {
-    path: '/settings',
-    component: page('settings/index.vue'),
-    children: [
-      { path: '', redirect: { name: 'settings.profile' } },
-      { path: 'profile', name: 'settings.profile', component: page('settings/profile.vue') },
-      { path: 'password', name: 'settings.password', component: page('settings/password.vue') }
-    ]
+    path: "/password/reset",
+    name: "password.request",
+    component: page("auth/password/email.vue"),
+  },
+  {
+    path: "/password/reset/:token",
+    name: "password.reset",
+    component: page("auth/password/reset.vue"),
+  },
+  {
+    path: "/email/verify/:id",
+    name: "verification.verify",
+    component: page("auth/verification/verify.vue"),
+  },
+  {
+    path: "/email/resend",
+    name: "verification.resend",
+    component: page("auth/verification/resend.vue"),
   },
 
-  { path: '*', component: page('errors/404.vue') }
-]
+  { path: "/home", name: "home", component: page("home.vue") },
+  { path: "/details", name: "details", component: page("details.vue") },
+  { path: "/auction", name: "auction", component: page("auction.vue") },
+  {
+    path: "/auctiondetails",
+    name: "auctiondetails",
+    component: page("auctiondetails.vue"),
+  },
+  { path: "/luckydraw", name: "luckydraw", component: page("luckydraw.vue") },
+  { path: "/blog", name: "blog", component: page("blog.vue") },
+  { path: "/cart", name: "cart", component: page("cart.vue") },
+  { path: "/admin", name: "admin", component: page("admin.vue") },
+  {
+    path: "/adminstore",
+    name: "adminstore",
+    component: page("adminstore.vue"),
+  },
+  {
+    path: "/adminauction",
+    name: "adminauction",
+    component: page("adminauction.vue"),
+  },
+  {
+    path: "/additem",
+    name: "additem",
+    component: page("additem.vue"),
+  },
+  {
+    path: "/detailsfillter",
+    name: "detailsfillter",
+    component: page("detailsfillter.vue"),
+  },
+  {
+    path: "/settings",
+    component: page("settings/index.vue"),
+    children: [
+      { path: "", redirect: { name: "settings.profile" } },
+      {
+        path: "profile",
+        name: "settings.profile",
+        component: page("settings/profile.vue"),
+      },
+      {
+        path: "password",
+        name: "settings.password",
+        component: page("settings/password.vue"),
+      },
+    ],
+  },
+
+  { path: "*", component: page("errors/404.vue") },
+];

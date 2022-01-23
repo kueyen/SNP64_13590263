@@ -18,6 +18,13 @@ class UsersSeeder extends Seeder
             'name' => 'kue',
             'email' => 'admin@treetoone.test',
             'password'=> bcrypt('123456')
-        ]]);
+        ],
+        [
+            'name' => 'nut',
+            'email' => 'user@treetoone.test',
+            'password'=> bcrypt('123456')
+        ]
+    
+    ]);
     }
 }

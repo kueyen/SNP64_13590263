@@ -88,44 +88,44 @@
 
 <script>
 export default {
-  middleware: "auth"
+  middleware: "auth",
   data: () => ({
     cart: [
       {
         image_url: "/images/hd1080.png",
         price: "180",
         amount: "1",
-        sum: "790"
+        sum: "790",
       },
       {
         image_url: "/images/hd1080.png",
         price: "180",
         amount: "1",
-        sum: "790"
+        sum: "790",
       },
       {
         image_url: "/images/hd1080.png",
         price: "180",
         amount: "1",
-        sum: "790"
+        sum: "790",
       },
       {
         image_url: "/images/hd1080.png",
         price: "180",
         amount: "1",
-        sum: "790"
+        sum: "790",
       },
       {
         image_url: "/images/hd1080.png",
         price: "180",
         amount: "1",
-        sum: "790"
+        sum: "790",
       },
       {
         image_url: "/images/hd1080.png",
         price: "180",
         amount: "1",
-        sum: "790"
+        sum: "790",
       },
     ],
   }),
@@ -135,7 +135,7 @@ export default {
         icon: "success",
         title: "สำเร็จ",
         showConfirmButton: false,
-        timer: 1500
+        timer: 1500,
       });
     },
   },

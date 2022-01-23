@@ -102,8 +102,10 @@
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <li><a class="dropdown-item" href="../home">ทั้งหมด</a></li>
-                <li><a class="dropdown-item" href="#">ต้นไม้ด่าง</a></li>
+                <li><a class="dropdown-item" href="/home">ทั้งหมด</a></li>
+                <li>
+                  <a class="dropdown-item" href="/detailsfillter">ต้นไม้ด่าง</a>
+                </li>
                 <li><a class="dropdown-item" href="#">ต้นไม้ฟอกอากาศ</a></li>
                 <li>
                   <a class="dropdown-item" href="#">ต้นไม้ประดับ</a>
@@ -119,20 +121,20 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">เปิดกล่องสุ่ม</a>
+              <a class="nav-link" href="/auction">ประมูล</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">เทียบขนาดต้นไม้</a>
+              <a class="nav-link" href="/luckydraw">Lucky Draw</a>
             </li>
             <a
               href="../cart"
               class="py-2 px-3"
-              style="border-radius: 25px;background: #82C3AB;"
+              style="border-radius: 25px; background: #82c3ab"
             >
-              <i class="fas fa-shopping-cart" style="color: white;"></i>
+              <i class="fas fa-shopping-cart" style="color: white"></i>
               <span
                 class="py-1 px-3"
-                style="border-radius: 25px; background: white;"
+                style="border-radius: 25px; background: white"
                 >0</span
               >
             </a>
@@ -149,15 +151,15 @@ import LocaleDropdown from "./LocaleDropdown";
 
 export default {
   components: {
-    LocaleDropdown
+    LocaleDropdown,
   },
 
   data: () => ({
-    appName: window.config.appName
+    appName: window.config.appName,
   }),
 
   computed: mapGetters({
-    user: "auth/user"
+    user: "auth/user",
   }),
 
   methods: {
@@ -167,8 +169,8 @@ export default {
 
       // Redirect to login.
       this.$router.push({ name: "login" });
-    }
-  }
+    },
+  },
 };
 </script>
 
