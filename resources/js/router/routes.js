@@ -30,7 +30,12 @@ export default [
   },
 
   { path: "/home", name: "home", component: page("home.vue") },
-  { path: "/details", name: "details", component: page("details.vue") },
+  { path: "/spotted", name: "spotted", component: page("spotted.vue") },
+  {
+    path: "/products/:id",
+    name: "products.detail",
+    component: page("details.vue"),
+  },
   { path: "/auction", name: "auction", component: page("auction.vue") },
   {
     path: "/auctiondetails",
@@ -41,6 +46,8 @@ export default [
   { path: "/blog", name: "blog", component: page("blog.vue") },
   { path: "/cart", name: "cart", component: page("cart.vue") },
   { path: "/admin", name: "admin", component: page("admin.vue") },
+
+  { path: "/additem", name: "additem", component: page("additem.vue") },
   {
     path: "/adminstore",
     name: "adminstore",

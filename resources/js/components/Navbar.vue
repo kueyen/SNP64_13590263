@@ -63,7 +63,7 @@
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../home">
+        <a class="navbar-brand" href="/home">
           <img src="/images/logo.png" width="150" />
         </a>
 
@@ -104,7 +104,7 @@
               >
                 <li><a class="dropdown-item" href="/home">ทั้งหมด</a></li>
                 <li>
-                  <a class="dropdown-item" href="/detailsfillter">ต้นไม้ด่าง</a>
+                  <a class="dropdown-item" href="/spotted">ต้นไม้ด่าง</a>
                 </li>
                 <li><a class="dropdown-item" href="#">ต้นไม้ฟอกอากาศ</a></li>
                 <li>

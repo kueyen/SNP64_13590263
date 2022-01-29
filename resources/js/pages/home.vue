@@ -1,20 +1,20 @@
 <template>
   <div>
+    <!-- <router-link :to="{ name: 'products.detail',params:{id: item.id} }"></router-link> -->
     <div class="container">
       <carousel :per-page="1">
-        <slide>
-          <img
-            class="d-block w-100"
-            src="/images/hd1080.png"
-            alt="First slide"
-          />
-        </slide>
-        <slide>
-          <img
-            class="d-block w-100"
-            src="/images/hd1080.png"
-            alt="First slide"
-          />
+        <slide v-for="(item, i) in recommends" :key="i">
+          <router-link
+            :to="{ name: 'products.detail', params: { id: item.id } }"
+          >
+            <img
+              class="card-img-top"
+              :src="item.image_url"
+              alt="Card image cap"
+              height="600px"
+              width="100%"
+            />
+          </router-link>
         </slide>
       </carousel>
     </div>
@@ -28,6 +28,8 @@
                 class="card-img-top"
                 :src="item.image_url"
                 alt="Card image cap"
+                height="200"
+                width="100%"
               />
               <div class="card-body">
                 <h5 class="card-title">
@@ -36,8 +38,13 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="../details" class="btn btn-warning text-white"
-                      >ซื้อเลย</a
+                    <a href="/details" class="btn btn-outline-warning"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                    <router-link
+                      class="btn btn-warning text-white"
+                      :to="{ name: 'products.detail', params: { id: item.id } }"
+                      >ซื้อเลย</router-link
                     >
                   </div>
                 </div>
@@ -53,17 +60,19 @@
       <div class="clearfix">
         <div class="float-start"><h3>ต้นไม้ด่าง</h3></div>
         <div class="float-end">
-          <a>ดูทั้งหมด</a>
+          <a href="/spotted">ดูทั้งหมด</a>
         </div>
       </div>
       <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in spotted" :key="i">
+        <slide v-for="(item, i) in spotted.items" :key="i">
           <div class="pe-3">
             <div class="card w-100">
               <img
                 class="card-img-top"
                 :src="item.image_url"
                 alt="Card image cap"
+                height="200"
+                width="100%"
               />
               <div class="card-body">
                 <h5 class="card-title">
@@ -72,8 +81,13 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="../details" class="btn btn-warning text-white"
-                      >ซื้อเลย</a
+                    <a href="/details" class="btn btn-outline-warning"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                    <router-link
+                      class="btn btn-warning text-white"
+                      :to="{ name: 'products.detail', params: { id: item.id } }"
+                      >ซื้อเลย</router-link
                     >
                   </div>
                 </div>
@@ -91,13 +105,15 @@
         </div>
       </div>
       <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in spotted" :key="i">
+        <slide v-for="(item, i) in airpurifier.items" :key="i">
           <div class="pe-3">
             <div class="card w-100">
               <img
                 class="card-img-top"
                 :src="item.image_url"
                 alt="Card image cap"
+                height="200"
+                width="100%"
               />
               <div class="card-body">
                 <h5 class="card-title">
@@ -106,8 +122,13 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="../details" class="btn btn-warning text-white"
-                      >ซื้อเลย</a
+                    <a href="/details" class="btn btn-outline-warning"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                    <router-link
+                      class="btn btn-warning text-white"
+                      :to="{ name: 'products.detail', params: { id: item.id } }"
+                      >ซื้อเลย</router-link
                     >
                   </div>
                 </div>
@@ -125,13 +146,15 @@
         </div>
       </div>
       <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in spotted" :key="i">
+        <slide v-for="(item, i) in ornamental.items" :key="i">
           <div class="pe-3">
             <div class="card w-100">
               <img
                 class="card-img-top"
                 :src="item.image_url"
                 alt="Card image cap"
+                height="200"
+                width="100%"
               />
               <div class="card-body">
                 <h5 class="card-title">
@@ -140,8 +163,13 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="../details" class="btn btn-warning text-white"
-                      >ซื้อเลย</a
+                    <a href="/details" class="btn btn-outline-warning"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                    <router-link
+                      class="btn btn-warning text-white"
+                      :to="{ name: 'products.detail', params: { id: item.id } }"
+                      >ซื้อเลย</router-link
                     >
                   </div>
                 </div>
@@ -159,13 +187,15 @@
         </div>
       </div>
       <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in spotted" :key="i">
+        <slide v-for="(item, i) in auspicious.items" :key="i">
           <div class="pe-3">
             <div class="card w-100">
               <img
                 class="card-img-top"
                 :src="item.image_url"
                 alt="Card image cap"
+                height="200"
+                width="100%"
               />
               <div class="card-body">
                 <h5 class="card-title">
@@ -174,8 +204,13 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="../details" class="btn btn-warning text-white"
-                      >ซื้อเลย</a
+                    <a href="/details" class="btn btn-outline-warning"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                    <router-link
+                      class="btn btn-warning text-white"
+                      :to="{ name: 'products.detail', params: { id: item.id } }"
+                      >ซื้อเลย</router-link
                     >
                   </div>
                 </div>
@@ -193,13 +228,15 @@
         </div>
       </div>
       <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in spotted" :key="i">
+        <slide v-for="(item, i) in fertilizer.items" :key="i">
           <div class="pe-3">
             <div class="card w-100">
               <img
                 class="card-img-top"
                 :src="item.image_url"
                 alt="Card image cap"
+                height="200"
+                width="100%"
               />
               <div class="card-body">
                 <h5 class="card-title">
@@ -208,8 +245,13 @@
                 <div class="clearfix">
                   <div class="float-start">{{ item.price }} ฿</div>
                   <div class="float-end">
-                    <a href="../details" class="btn btn-warning text-white"
-                      >ซื้อเลย</a
+                    <a href="/details" class="btn btn-outline-warning"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                    <router-link
+                      class="btn btn-warning text-white"
+                      :to="{ name: 'products.detail', params: { id: item.id } }"
+                      >ซื้อเลย</router-link
                     >
                   </div>
                 </div>
@@ -224,95 +266,43 @@
 
 <script>
 // import axios from 'axios'
+import { mapActions, mapGetters } from "vuex";
 export default {
   middleware: "auth",
-  data: () => ({
-    recommends: [
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst",
-        price: "180"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst2",
-        price: "150"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst2",
-        price: "150"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst2",
-        price: "150"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst2",
-        price: "150"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst2",
-        price: "150"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "TEst2",
-        price: "150"
-      }
-    ],
-    spotted: [
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted1",
-        price: "70"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted2",
-        price: "40"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted2",
-        price: "40"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted2",
-        price: "40"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted2",
-        price: "40"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted2",
-        price: "40"
-      },
-      {
-        image_url: "/images/hd1080.png",
-        title: "spotted2",
-        price: "40"
-      }
-    ]
-  }),
-
-  // async asyncData () {
-  //   const { data: projects } = await axios.get('/api/projects')
-
-  //   return {
-  //     projects
-  //   }
-  // },
+  computed: {
+    ...mapGetters("product", {
+      recommends: "items",
+      spotted: "spotted",
+      airpurifier: "airpurifier",
+      ornamental: "ornamental",
+      auspicious: "auspicious",
+      fertilizer: "fertilizer",
+    }),
+  },
+  methods: {
+    ...mapActions("product", {
+      fetch: "recommend",
+      fetchByCat: "fetchByCat",
+    }),
+  },
+  async created() {
+    await this.fetch();
+    //load by id and custome name
+    await this.fetchByCat({ category_id: 1, name: "spotted" });
+    await this.fetchByCat({ category_id: 2, name: "airpurifier" });
+    await this.fetchByCat({ category_id: 3, name: "ornamental" });
+    await this.fetchByCat({ category_id: 4, name: "auspicious" });
+    await this.fetchByCat({ category_id: 5, name: "fertilizer" });
+  },
 
   metaInfo() {
     return { title: this.$t("home") };
-  }
+  },
 };
 </script>
+
+<style>
+img {
+  object-fit: cover;
+}
+</style>

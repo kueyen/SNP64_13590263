@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <h3 class="mt-3 text-center">รายการสินค้า</h3>
+      <h3 class="mt-3 text-center">รายการสินค้า {{ "ไม้ด่าง" }}</h3>
       <div class="row">
-        <div class="col-6 mt-3" v-for="(item, i) in recommends" :key="i">
+        <div class="col-6 mt-3" v-for="(item, i) in spotted.items" :key="i">
           <div class="card" style="width: 650px">
             <div class="row no-gutters">
               <div class="col-sm-5">
@@ -19,8 +19,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ item.title }}</h5>
                   <p class="card-text">{{ item.price }} ฿</p>
-                  <a href="#" class="btn btn-primary">แก้ไขสินค้า</a>
-                  <a href="#" class="btn btn-danger">ลบสินค้า</a>
+                  <a href="#" class="btn btn-primary">ซื้อเลย</a>
                 </div>
               </div>
             </div>
@@ -32,6 +31,7 @@
 </template>
 
 <script>
+// import axios from 'axios'
 import { mapActions, mapGetters } from "vuex";
 export default {
   middleware: "auth",
@@ -39,10 +39,6 @@ export default {
     ...mapGetters("product", {
       recommends: "items",
       spotted: "spotted",
-      airpurifier: "airpurifier",
-      ornamental: "ornamental",
-      auspicious: "auspicious",
-      fertilizer: "fertilizer",
     }),
   },
   methods: {
@@ -55,14 +51,16 @@ export default {
     await this.fetch();
     //load by id and custome name
     await this.fetchByCat({ category_id: 1, name: "spotted" });
-    await this.fetchByCat({ category_id: 2, name: "airpurifier" });
-    await this.fetchByCat({ category_id: 3, name: "ornamental" });
-    await this.fetchByCat({ category_id: 4, name: "auspicious" });
-    await this.fetchByCat({ category_id: 5, name: "fertilizer" });
   },
 
   metaInfo() {
-    return { title: this.$t("adminstore") };
+    return { title: this.$t("spotted") };
   },
 };
 </script>
+
+<style>
+img {
+  object-fit: cover;
+}
+</style>
