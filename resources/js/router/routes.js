@@ -31,11 +31,11 @@ export default [
 
   { path: "/home", name: "home", component: page("home.vue") },
   { path: "/spotted", name: "spotted", component: page("spotted.vue") },
-  {
-    path: "/products/:id",
-    name: "products.detail",
-    component: page("details.vue"),
-  },
+  // {
+  //   path: "/products/:id",
+  //   name: "products.detail",
+  //   component: page("details.vue"),
+  // },
   { path: "/auction", name: "auction", component: page("auction.vue") },
   {
     path: "/auctiondetails",
@@ -68,6 +68,28 @@ export default [
     name: "detailsfillter",
     component: page("detailsfillter.vue"),
   },
+  //-----start(newpages)-----
+  //---shop---
+  {
+    path: "/shop",
+    name: "producthome",
+    component: page("shop/producthome.vue"),
+  },
+  // {
+  //   path: "/shop/details",
+  //   name: "producthome",
+  //   component: page("shop/productdetail.vue"),
+  // },
+  {
+    path: "/shop/details/:id",
+    name: "products.detail",
+    component: page("shop/productdetail.vue"),
+  },
+  //---auction---
+
+  //---luckydraw---
+
+  //-----end------
   {
     path: "/settings",
     component: page("settings/index.vue"),

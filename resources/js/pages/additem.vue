@@ -61,7 +61,11 @@
           <label for="exampleInputEmail1" class="form-label"
             >เพิ่มรูปภาพ(image_url)</label
           >
-          <input type="text" class="form-control" v-model="form.image_url" />
+          <input
+            type="file"
+            class="form-control"
+            @change="onfilechange($event)"
+          />
         </div>
 
         <button
@@ -100,10 +104,22 @@ export default {
     ...mapActions("category", {
       fetch: "index",
     }),
+    onfilechange(event) {
+      this.form.image_url = event.target.files[0];
+    },
     async add() {
-      const { data } = await axios.post("/api/products", this.form);
+      let configForImage = {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      };
+      let _form = new FormData();
+      _form.append("image_url", this.form.image_url);
+      console.log(_form);
+      //_form.append("image_url", this.form.image_url);
+      //const { data } = await axios.post("/api/products", _form, configForImage);
 
-      this.$router.push({ name: "home" });
+      //this.$router.push({ name: "home" });
     },
   },
   async created() {

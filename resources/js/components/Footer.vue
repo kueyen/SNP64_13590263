@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid mt-5" style="background: #56AB91;">
-    <div class="p-2 text-center text-white">
+  <div class="container-fluid mt-5 gradient">
+    <div class="p-4 text-center text-white">
       © Copyright 2021 | All Rights Reserved.
     </div>
   </div>
@@ -10,4 +10,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.gradient {
+  background: #57c84d;
+}
+</style>

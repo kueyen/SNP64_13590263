@@ -44,7 +44,7 @@
                     <router-link
                       class="btn btn-warning text-white"
                       :to="{ name: 'products.detail', params: { id: item.id } }"
-                      >ซื้อเลย</router-link
+                      >ดูรายละเอียด</router-link
                     >
                   </div>
                 </div>

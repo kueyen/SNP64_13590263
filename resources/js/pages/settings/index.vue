@@ -1,10 +1,14 @@
 <template>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" style="margin-top: 100px">
     <div class="col-md-3 mb-3">
       <card :title="$t('settings')" class="settings-card">
         <ul class="nav flex-column nav-pills">
           <li v-for="tab in tabs" :key="tab.route" class="nav-item">
-            <router-link :to="{ name: tab.route }" class="nav-link" active-class="active">
+            <router-link
+              :to="{ name: tab.route }"
+              class="nav-link"
+              active-class="active"
+            >
               <fa :icon="tab.icon" fixed-width />
               {{ tab.name }}
             </router-link>
@@ -23,25 +27,25 @@
 
 <script>
 export default {
-  middleware: 'auth',
+  middleware: "auth",
 
   computed: {
-    tabs () {
+    tabs() {
       return [
         {
-          icon: 'user',
-          name: this.$t('profile'),
-          route: 'settings.profile'
+          icon: "user",
+          name: this.$t("profile"),
+          route: "settings.profile",
         },
         {
-          icon: 'lock',
-          name: this.$t('password'),
-          route: 'settings.password'
-        }
-      ]
-    }
-  }
-}
+          icon: "lock",
+          name: this.$t("password"),
+          route: "settings.password",
+        },
+      ];
+    },
+  },
+};
 </script>
 
 <style>
